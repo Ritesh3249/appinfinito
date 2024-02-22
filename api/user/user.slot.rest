@@ -1,0 +1,16 @@
+@host= http://localhost:5001/v1/api/user/slot
+
+@token= eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0MkB5b3BtYWlsLmNvbSIsIm9yZ19pZCI6IkFJMDAwMDEiLCJpYXQiOjE3MDExODc5NTQsImV4cCI6MTc0NDM4Nzk1NH0.dZFdJ3qKt1rJisgHxCMetK572m_pUwxQKd9IJ_HBbog
+ 
+
+POST {{host}}/book-slot
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+    "slot_id": "100",
+    "user_id": "1",
+    "startTime": "10:00",
+    "endTime": "10:20",
+    "user_message":""
+}

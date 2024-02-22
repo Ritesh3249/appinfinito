@@ -1,0 +1,56 @@
+@host= http://localhost:5001/v1/api/admin/staff
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5NjAwMDk3NCwiZXhwIjoxNzM5MjAwOTc0fQ.bdgVi2oVc7lUQuBbgyJ5gPa0rtHiYoULAbWwHoeOte8
+
+@token2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWxfaWQiOiJzdWNrMUB5b3BtYWlsLmNvbSIsIm9yZ19pZCI6IkFJMDAwMDIiLCJpYXQiOjE2OTQyNjE3NzksImV4cCI6MTczNzQ2MTc3OX0.3_EYQJrbEC3zYh0g97JmGGVkdu61ewjfPUeLtIL9Wc8
+
+
+
+POST {{host}}/create-staff
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "staff_name":"w servic22e",
+  "image_url":["http://newitem.com"],
+  "mobile": "171w2225w1672d890",
+  "gender":"sadf",
+  "state": "California",
+  "city": "Los Angeles",
+  "address_line_1":"",
+  "address_line_2":""
+
+ }
+
+###
+GET {{host}}/get-all-staff?page=1&limit=3&search=w
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-staff-by-id?staff_id=3
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/update-staff
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   "staff_name":"newdddd service",
+  "image_url":"http://newitem.com",
+  "staff_id":"3",   
+  "status":false
+}
+
+###
+POST {{host}}/delete-staff
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "staff_id":"3"
+}
+
+ 

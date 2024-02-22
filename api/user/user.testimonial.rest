@@ -1,0 +1,6 @@
+@host= http://localhost:5001/v1/api/user/testimonial
+
+GET {{host}}/get-all-testimonial?page=1&limit=20&search=&org_id=AI00001
+Content-Type: application/json 
+org_id:AI00001
+ 

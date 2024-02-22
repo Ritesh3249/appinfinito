@@ -1,0 +1,44 @@
+@host= http://localhost:5001/v1/api/super-admin/organization-auth
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJwYXdhbkBhcHBzaW5maW5pdG8uY29tIiwiaWF0IjoxNjk4MzkwOTY2LCJleHAiOjE3NDE1OTA5NjZ9.H94PnSi1Hm50pSFdBoS9gEhbgRlKLhCg7o8j7gbkB6A
+ 
+
+POST {{host}}/create-organization
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "email_id": "test2@yopmail.com",
+  "pan_id": "ABs14fs1123245F",
+  "mobile": "171251672d890",
+  "state": "California",
+  "city": "Los Angeles",
+  "address_line_1":"",
+  "legal_name":"ssdfdfs"
+   
+}
+
+
+###
+POST {{host}}/create-password
+Content-Type: application/json
+
+{
+  "code":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWxfaWQiOiJ0ZXN0MkB5b3BtYWlsLmNvbSIsIm9yZ19pZCI6IkFJMDAwMDIiLCJpYXQiOjE3MDA2Nzg5ODgsImV4cCI6MTcwMDkzODE4OH0.G30VLDDpHYNxqYM3Fjm113LCzBb5xOd7FBEZG-Tx4nI",
+  "password":"Test@123"
+}
+
+
+###
+POST {{host}}/login
+Content-Type: application/json
+
+{ 
+"email_id":  "test2@yopmail.com",
+"password":"Test@123"
+}
+
+ 
+
+
+# "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWxfaWQiOiJzdWNrQHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5NDI2MDQwNSwiZXhwIjoxNzM3NDYwNDA1fQ.Iyp2YtToRTqedcDE2mrP97ezLcjS1KnUXhcciuqBR1w"

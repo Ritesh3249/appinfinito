@@ -1,0 +1,67 @@
+@host= http://localhost:5001/v1/api/admin/sell
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5NjAwMDk3NCwiZXhwIjoxNzM5MjAwOTc0fQ.bdgVi2oVc7lUQuBbgyJ5gPa0rtHiYoULAbWwHoeOte8
+
+POST {{host}}/create-sell-item
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+     "item_name": "qwertyu", 
+      "quantity":"4", 
+      "description": "1",
+      "specification": {},
+      "sell_price":"1",
+      "sells_type":"Sell"
+}
+
+###
+POST {{host}}/return-sell-item
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+     "item_name":"milk",
+      "sell_id":"5",
+      "return_quantity": "2",
+      "return_reason":"sdfa"
+}
+
+
+###
+GET {{host}}/get-all-sell-item?page=1&limit=3&search=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+
+###
+GET {{host}}/get-sell-by-id?sell_id=5
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+POST {{host}}/update-sell-item
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+      "sell_item_name":"oil", 
+      "sell_item_id":"oil", 
+      "update_quantity":"1",
+      "description": "sd",
+      "sells_type":"return",
+      "return_reason":"adfas", 
+      "specification": {}
+}
+
+
+###
+POST {{host}}/delete-sell-item
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+      "sell_id":"8"
+}

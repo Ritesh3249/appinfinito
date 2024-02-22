@@ -1,0 +1,55 @@
+@host= http://localhost:5001/v1/api/admin/product
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5NjAwMDk3NCwiZXhwIjoxNzM5MjAwOTc0fQ.bdgVi2oVc7lUQuBbgyJ5gPa0rtHiYoULAbWwHoeOte8
+
+
+@token2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWxfaWQiOiJzdWNrMUB5b3BtYWlsLmNvbSIsIm9yZ19pZCI6IkFJMDAwMDIiLCJpYXQiOjE2OTQyNjE3NzksImV4cCI6MTczNzQ2MTc3OX0.3_EYQJrbEC3zYh0g97JmGGVkdu61ewjfPUeLtIL9Wc8
+
+
+
+POST {{host}}/create-product
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "product_name":"c1",
+  "image_url":["http://newitem.com"],
+  "sub_category_id":"1",
+  "price":"12", 
+  "discounted_price":"10",
+  "description":"",
+  "specification":{"name":"rites"}
+}
+
+###
+GET {{host}}/get-all-product?sub_category_id=&category_id=&page=1&limit=20&search=c
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-product-by-id?product_id=1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/update-product
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   "product_name":"newProduct",
+  "image_url":"http://newitem.com",
+  "product_id":"5", 
+  "discounted_price":"0",
+  "description":"sds",
+  "specification":{"name":"rites"}
+}
+###
+POST {{host}}/delete-product
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "product_id":"1"
+}
+ 

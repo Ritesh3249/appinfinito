@@ -1,0 +1,53 @@
+@host= http://localhost:5001/v1/api/admin/vendor
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5ODM5MTAxNiwiZXhwIjoxNzQxNTkxMDE2fQ.kG_Q_V8HoM5KzHlLFi_lFVrHYfFDgYIX8mm_kRLOsqQ
+
+
+
+POST {{host}}/create-vendor
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "vendor_name":"c1w22", 
+  "email_id": "test@yopmail.com",
+  "mobile": "1722125waas1sd672d890",
+  
+  "status":false
+  
+}
+
+###
+GET {{host}}/get-all-vendor?page=1&limit=20&search=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-vendor-by-id?vendor_id=1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/update-vendor
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   
+  "vendor_name":"c1asdasda22",
+  "image_url":["http://newitem.com"],
+  "email_id": "test@yopmail.com",
+  "mobile": "1722672d890",
+  "state": "California",
+  "city": "Los Angeles",
+  "vendor_id":"1"
+}
+###
+POST {{host}}/delete-vendor
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "vendor_id":"1"
+}
+ 

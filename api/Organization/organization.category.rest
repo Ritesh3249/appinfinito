@@ -1,0 +1,107 @@
+@host= http://localhost:5001/v1/api/admin/category
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5Njk5OTQ4MywiZXhwIjoxNzQwMTk5NDgzfQ.k_pG1NYzCrcgoqhySVFyG69l8kUXW0Q-BloK-KEUx3I
+ 
+
+###
+POST {{host}}/create-category
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "category_name":"WWWWWWat1",
+  "image_url":["https://sndfnasdfnaskjd"],
+  "status":false,
+  "isMenu":false,
+  "isHome":false
+  
+}
+
+###
+GET {{host}}/get-all-category?page=1&limit=1000&search=w
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-is-home?page=1&limit=1000&search=wwwwwwat1&is_home=true
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-is-menu?page=1&limit=1000&search=&is_menu=true
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-category-by-id?category_id=2
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/update-category
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "category_id":"2", 
+  "category_name":"new"
+}
+###
+POST {{host}}/delete-category
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "category_id":"1"
+}
+
+
+
+# Sub Category section
+
+
+
+###
+POST {{host}}/create-sub-category
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "sub_category_name":"new item 11",
+  "category_id":"1",
+  "image_url":["https://sndfnasdfnaskjd"]
+}
+
+
+
+###
+GET {{host}}/get-all-sub-category?category_id=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-sub-category-by-id?sub_category_id=1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/update-sub-category
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "sub_category_name":"1ai111",
+  "sub_category_id":"1",
+  "category_id":"3",
+  "image_url":["https://111dlfjbgjfdbgksjdf1111skjd"],
+  "status":false
+}
+###
+POST {{host}}/delete-sub-category
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "sub_category_id":"3"
+}
+

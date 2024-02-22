@@ -1,0 +1,23 @@
+@host= http://localhost:5001/v1/api/user/category
+ 
+
+GET {{host}}/get-all-category?page=1&limit=1000&search=w&org_id=AI00001
+Content-Type: application/json
+org_id:AI00001
+
+ 
+###
+GET {{host}}/get-is-home?page=1&limit=1000&search=wwwwwwat1&is_home=false&org_id=AI00001
+Content-Type: application/json
+org_id:AI00001
+
+ 
+###
+GET {{host}}/get-is-menu?page=1&limit=1000&search=&is_menu=false&org_id=AI00001
+Content-Type: application/json
+org_id:AI00001
+
+ 
+
+
+# Sub Category section

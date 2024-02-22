@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.428.0",
+    "@aws-sdk/s3-request-presigner": "^3.428.0",
+    "aws-sdk": "^2.1463.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "http-errors": "^2.0.0",
+    "joi": "^17.10.1",
+    "joi-password": "^4.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.5",
+    "pg": "^8.11.3",
+    "sequelize": "^6.32.1",
+    "uid": "^2.0.2"
+  },
+  "name": "home-serviecs-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

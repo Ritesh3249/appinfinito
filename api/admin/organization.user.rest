@@ -1,0 +1,46 @@
+@host= http://localhost:5001/v1/api/super-admin/organization-user
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWxfaWQiOiJwYXdhbkBhcHBzaW5maW5pdG8uY29tIiwiaWF0IjoxNjk1NjU0MDU4LCJleHAiOjE3Mzg4NTQwNTh9.Lvi0mtyoVQkIk0HDOjvPcjA75QzTVpY9N6s0pXBNtiQ
+ 
+
+
+
+###
+GET  {{host}}/get-all-organization?page=1&limit=3
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET  {{host}}/get-organization-by-id?org_id=AI00002
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/update-org-by-super-admin
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+   "pan_id": "updatedStriung",
+        "org_id":"AI00002",
+        "email_id": "updasdasdadated@yopmail.com",
+  "status":false,
+        "mobile": "123456788",
+        "state": "delhi",
+        "city": "new delhi",
+        "address_line_1": "new address 1",
+        "address_line_2": "new address 2",
+        "legal_name": "new name",
+        "gstin": "ASD234567FGH",
+        "website_url":"https://new-url.com",
+        "status": false
+}
+###
+POST {{host}}/delete-org-by-super-admin
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "org_id":"AI00002"
+}

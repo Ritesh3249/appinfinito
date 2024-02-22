@@ -1,0 +1,24 @@
+@host= http://localhost:5001/v1/api/super-admin/auth
+
+@token = ""
+
+
+POST {{host}}/register
+Content-Type: application/json
+
+{
+"firstName":  "pawan",
+"lastName":  "singh",
+"email_id":  "pawan@appsinfinito.com",
+"password":"K53DTWGirRi0BPUckoxg"
+}
+
+###
+
+POST {{host}}/login
+Content-Type: application/json
+
+{ 
+"email_id":"pawan@appsinfinito.com",
+"password":"K53DTWGirRi0BPUckoxg"
+}

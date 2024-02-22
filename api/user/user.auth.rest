@@ -1,0 +1,31 @@
+@host= http://localhost:5001/v1/api/user/auth
+
+ 
+POST {{host}}/register
+Content-Type: application/json
+org_id:AI0000666
+
+{
+  "email_id": "test2@yopmail.com",
+  "pan_id": "ABs14fs1123245F",
+  "mobile": "171251672d890",
+  "password":"Test@123",
+  "state": "California",
+  "city": "Los Angeles",
+  "address_line_1":"",
+  "user_name":"ssdfdfs"
+   
+}
+
+ 
+
+###
+POST {{host}}/login
+Content-Type: application/json
+
+{ 
+"email_id":  "test2@yopmail.com",
+"password":"Test@123"
+}
+
+  

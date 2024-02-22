@@ -1,0 +1,54 @@
+@host= http://localhost:5001/v1/api/admin/stock
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5ODM5MTAxNiwiZXhwIjoxNzQxNTkxMDE2fQ.kG_Q_V8HoM5KzHlLFi_lFVrHYfFDgYIX8mm_kRLOsqQ
+
+
+POST {{host}}/create-stock
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "item_name": "milk",
+    "specification": {
+        "color": "red"
+    },
+    "description": "",  
+    "sku": "", 
+    "hns_code": ""
+}
+###
+
+POST {{host}}/update-stock
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+     "item_name": "oil",
+    "specification": {
+        "color": "green"
+    }, 
+    "description": "dfasdf",  
+    "sku": "asdfa", 
+    "hns_code": "asdf",
+    "item_id":"1"
+} 
+
+
+###
+GET {{host}}/get-all-stock?page=1&limit=3&search=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET {{host}}/get-stock-by-id?item_id=1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/delete-stock-item
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "item_id":"1"
+}

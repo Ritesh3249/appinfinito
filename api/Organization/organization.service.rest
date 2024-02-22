@@ -1,0 +1,56 @@
+@host= http://localhost:5001/v1/api/admin/service
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5NjAwMDk3NCwiZXhwIjoxNzM5MjAwOTc0fQ.bdgVi2oVc7lUQuBbgyJ5gPa0rtHiYoULAbWwHoeOte8
+
+@token2 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWxfaWQiOiJzdWNrMUB5b3BtYWlsLmNvbSIsIm9yZ19pZCI6IkFJMDAwMDIiLCJpYXQiOjE2OTQyNjE3NzksImV4cCI6MTczNzQ2MTc3OX0.3_EYQJrbEC3zYh0g97JmGGVkdu61ewjfPUeLtIL9Wc8
+
+
+
+POST {{host}}/create-service
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "service_name":"nesedrvsdsic2342e",
+  "image_url":["http://newitem.com"],
+  "sub_category_id":"1",
+  "price":"12",
+  "slot_duration":"1:35",
+  "discounted_price":"10",
+  "description":"",
+  "status":true,
+  "specification":{}
+}
+
+###
+GET {{host}}/get-all-service?sub_category_id=5&category_id=2&page=1&limit=3&search=name
+Content-Type: application/json
+Authorization: Bearer {{token}}
+ 
+###
+GET {{host}}/get-service-by-id?service_id=1
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/update-service
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "service_name":"new11332 service",
+  "image_url":"http://newitem.com",
+  "service_id":"1",
+  "price":"12", 
+  "description":"asd"
+}
+###
+POST {{host}}/delete-service
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+ "service_id":"1"
+}
+
+ 

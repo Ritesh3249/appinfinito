@@ -1,0 +1,9 @@
+@host= http://localhost:5001/v1/api
+
+GET {{host}}/syncDb
+Content-Type: application/json
+
+###
+
+GET {{host}}/create-slot
+Content-Type: application/json

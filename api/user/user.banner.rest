@@ -1,0 +1,10 @@
+@host= http://localhost:5001/v1/api/user/banner
+
+# @token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5NjAwMDk3NCwiZXhwIjoxNzM5MjAwOTc0fQ.bdgVi2oVc7lUQuBbgyJ5gPa0rtHiYoULAbWwHoeOte8
+
+ 
+ 
+GET {{host}}/get-all-banner?page=1&limit=20&search=
+Content-Type: application/json 
+org_id:AI00001
+  

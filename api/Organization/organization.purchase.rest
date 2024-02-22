@@ -1,0 +1,52 @@
+@host= http://localhost:5001/v1/api/admin/purchase
+
+@token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWxfaWQiOiJ0ZXN0QHlvcG1haWwuY29tIiwib3JnX2lkIjoiQUkwMDAwMSIsImlhdCI6MTY5ODM5MTAxNiwiZXhwIjoxNzQxNTkxMDE2fQ.kG_Q_V8HoM5KzHlLFi_lFVrHYfFDgYIX8mm_kRLOsqQ
+
+POST {{host}}/purchase-product
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "item_name": "oil",
+      "specification": {},
+      "vendor_name":"vivek",
+      "mrp":"1212",
+      "sell_price":"12",
+      "buyer_price":"200",
+      "quantity":"4"
+}
+###
+POST {{host}}/update-purchased-product
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+      "specification": {},
+      "vendor_name":"vivek",
+      "mrp":"1212",
+      "sell_price":"12",
+      "buyer_price":"200",
+      "quantity":"2",
+      "purchase_item_id":"3"
+}
+
+
+###
+GET {{host}}/get-all-purchased-product?page=1&limit=3&search=
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+###
+GET {{host}}/get-purchased-product-by-id?purchase_item_id=3
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/delete-purchased-product
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "purchase_item_id":"3"
+}
